@@ -1,0 +1,31 @@
+﻿.resume-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.resume-container {
+
+}
+
+.resume-container h1, h2 {
+    color: #2c3e50;
+}
+
+.resume-container .section {
+    margin-bottom: 2rem;
+}
+
+.resume-container .job {
+    margin-bottom: 1.5rem;
+}
+
+.resume-container .job h4 {
+    margin-bottom: 0;
+}
+
+.resume-container .footer {
+    text-align: center;
+}

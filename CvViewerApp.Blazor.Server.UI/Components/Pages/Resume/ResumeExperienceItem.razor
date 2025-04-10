@@ -1,0 +1,16 @@
+﻿<div class="job">
+    <h4>@ExperienceItem.Position</h4>
+    <small>@ExperienceItem.Company (@ExperienceItem.StartDate - @ExperienceItem.EndDate @ExperienceItem.Location)</small>
+    <p>@ExperienceItem.Description</p>
+    <ul>
+        @foreach (var responsibility in ExperienceItem.Responsibilities)
+        {
+            <li>@responsibility</li>
+        }
+    </ul>
+</div>
+
+@code {
+    [Parameter]
+    public Experience ExperienceItem { get; set; }
+}

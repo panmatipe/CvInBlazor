@@ -1,0 +1,21 @@
+﻿@using System.Text.RegularExpressions
+<section class="section contact-info">
+    <h2>Contact</h2>
+    <div><strong>Location: </strong>@ContactInfo.Location</div>
+    <div><strong>Phone: </strong>@ContactInfo.Phone</div>
+    <div><strong>Email: </strong> <a href="mailto:@ContactInfo.Email">@ContactInfo.Email</a></div>
+    <div><strong>LinkedIn: </strong> <a href="@ContactInfo.LinkedIn" target="_blank">@GetLinkedInUsername(ContactInfo.LinkedIn)</a></div>
+</section>
+
+@code {
+    [Parameter]
+    public ContactInfo ContactInfo { get; set; }
+
+    private string GetLinkedInUsername(string url)
+    {
+        if (string.IsNullOrWhiteSpace(url)) 
+            return string.Empty;
+        var match = Regex.Match(url, @"linkedin\.com(/in/[\w\-]+)");
+        return match.Groups[1].Value;
+    }
+}

@@ -1,0 +1,12 @@
+﻿<section class="section languages">
+    <h2>Languages</h2>
+    @foreach (var langKVP in LangDict)
+    {
+        <div><span>@langKVP.Key</span> - <span>@langKVP.Value</span></div>
+    }
+</section>
+
+@code {
+    [Parameter]
+    public Dictionary<string, string> LangDict { get; set; }
+}

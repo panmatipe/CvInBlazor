@@ -1,0 +1,53 @@
+﻿@page "/cv"
+@inject ICvService Service
+
+<PageTitle>Resume</PageTitle>
+
+@if (cvData == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="resume-container my-4">
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <ResumeHeader FullName="@cvData.Name" Title="@cvData.Title" />
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Left column -->
+            <div class="col-md-5 col-12">
+                <ResumeContact ContactInfo="@cvData.Contact" />
+                <ResumeSkills SkillList="@cvData.Skills" />
+                <ResumeLanguages LangDict="@cvData.Languages" />
+            </div>
+
+            <!-- Right column -->
+            <div class="col-md-7 col-12">
+                <ResumeProfileInfo ProfileInfo="@cvData.Profile" />
+                <ResumeExperience ExperienceList="@cvData.Experience" />
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <ResumeFooter />
+            </div>
+        </div>
+
+    </div>
+}
+
+
+
+@code {
+    private CvData? cvData;
+
+    protected override async Task OnInitializedAsync()
+    {
+        cvData = await Service.GetCvDataAsync();
+    }
+}

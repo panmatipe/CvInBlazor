@@ -1,0 +1,37 @@
+﻿<section class="section">
+    <h2>Experience</h2>
+
+    @foreach (var experience in ExperienceList)
+    {
+        <div class="job">
+            <ResumeExperienceItem ExperienceItem="@experience" />
+        </div>
+    }
+
+   @*  <div class="job">
+        <h3>.NET Developer - CDI SA <small>(Dec 2021 - Mar 2025)</small></h3>
+        <p>Worked on a comprehensive web platform for managing medical data, ensuring secure, efficient operations for medical personnel.</p>
+        <ul>
+            <li>Built UI components with ASP.NET WebForms and Vue.js</li>
+            <li>Used Hangfire for background job processing</li>
+            <li>Implemented Identity Server for secure auth</li>
+            <li>Integrated ElasticSearch to enhance data queries</li>
+        </ul>
+    </div>
+
+    <div class="job">
+        <h3>Full-stack Developer - Idealogic <small>(Aug 2018 - Nov 2021)</small></h3>
+        <p>Developed a suite of tools for construction engineers. Addressed performance bottlenecks in model processing with async techniques.</p>
+        <ul>
+            <li>Integrated external engines for optimized calculations</li>
+            <li>Built UI with Angular for better UX</li>
+            <li>Migrated .NET Framework APIs to .NET Core</li>
+        </ul>
+    </div> *@
+</section>
+
+@code {
+    [Parameter]
+    public List<Experience> ExperienceList { get; set; }
+
+}

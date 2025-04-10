@@ -1,0 +1,12 @@
+﻿<section class="section skills">
+    <h2>Skills</h2>
+    @foreach (var skill in SkillList)
+    {
+        <div>@skill</div>
+    }
+</section>
+
+@code {
+    [Parameter]
+    public List<string> SkillList { get; set; }
+}
